@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ārati Collection</title>
+    <style>
+        @page {
+            margin: 1in;
+            size: A4;
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.4;
+            color: #333;
+            max-width: 100%;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #8B4513;
+            padding-bottom: 15px;
+        }
+        
+        .main-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #8B4513;
+            margin-bottom: 5px;
+        }
+        
+        .subtitle {
+            font-size: 14px;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .aarti-section {
+            margin-bottom: 40px;
+            page-break-inside: avoid;
+        }
+        
+        .aarti-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #8B4513;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #8B4513;
+            padding-bottom: 5px;
+        }
+        
+        .aarti-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .verse-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        
+        .verse-table th {
+            background-color: #f5f5f5;
+            padding: 8px;
+            border: 1px solid #ddd;
+            font-weight: bold;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .verse-table td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        .devanagari {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .iast {
+            font-size: 14px;
+            font-style: italic;
+            color: #555;
+        }
+        
+        .english {
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .chorus {
+            background-color: #fff8dc;
+            padding: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #8B4513;
+            border-radius: 3px;
+        }
+        
+        .chorus-label {
+            font-weight: bold;
+            color: #8B4513;
+            margin-bottom: 5px;
+        }
+        
+        .page-break {
+            page-break-before: always;
+        }
+        
+        /* Mobile-First Responsive Design */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+                font-size: 16px;
+                overflow-x: hidden;
+                min-height: 100vh;
+            }
+            
+            .main-title {
+                font-size: 20px;
+            }
+            
+            .aarti-title {
+                font-size: 16px;
+                line-height: 1.3;
+            }
+            
+            .aarti-section {
+                margin-bottom: 30px;
+                page-break-inside: auto;
+            }
+            
+            .aarti-subtitle {
+                font-size: 13px;
+            }
+            
+            /* Stack table columns vertically on mobile */
+            .verse-table {
+                border: none;
+                margin-bottom: 20px;
+            }
+            
+            .verse-table thead {
+                display: none;
+            }
+            
+            .verse-table, 
+            .verse-table tbody, 
+            .verse-table tr, 
+            .verse-table td {
+                display: block;
+                width: 100%;
+            }
+            
+            .verse-table tr {
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 15px;
+                margin-bottom: 15px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            
+            .verse-table td {
+                border: none;
+                padding: 3px 0;
+                text-align: left;
+            }
+            
+            .devanagari {
+                font-size: 18px;
+                margin-bottom: 6px;
+                line-height: 1.4;
+            }
+            
+            .iast {
+                font-size: 15px;
+                margin-bottom: 8px;
+                line-height: 1.3;
+            }
+            
+            .english {
+                font-size: 14px;
+                line-height: 1.4;
+            }
+            
+            .chorus {
+                padding: 15px;
+                margin: 20px 0;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                border-left: 6px solid #8B4513;
+                background-color: #fff8dc !important;
+            }
+            
+            .chorus-label {
+                font-size: 15px;
+                margin-bottom: 10px;
+                text-align: center;
+                background-color: #8B4513;
+                color: white;
+                padding: 6px 12px;
+                border-radius: 15px;
+                display: inline-block;
+                width: auto;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                width: fit-content;
+                margin: 0 auto 10px auto;
+            }
+            
+            .chorus .devanagari {
+                font-size: 17px;
+                margin-bottom: 6px;
+            }
+            
+            .chorus .iast {
+                font-size: 14px;
+                margin-bottom: 6px;
+            }
+            
+            .chorus .english {
+                font-size: 13px;
+            }
+            
+            .page-break {
+                page-break-before: auto; /* Remove page breaks on mobile */
+                margin-top: 30px; /* Add spacing instead */
+            }
+        }
+
+        /* Extra small screens (phones in portrait) */
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 8px;
+            }
+            
+            .main-title {
+                font-size: 18px;
+            }
+            
+            .aarti-title {
+                font-size: 15px;
+            }
+            
+            .verse-table tr {
+                padding: 12px;
+            }
+            
+            .devanagari {
+                font-size: 17px;
+            }
+            
+            .iast {
+                font-size: 14px;
+            }
+            
+            .english {
+                font-size: 13px;
+            }
+        }
+
+        /* Mobile-First Responsive Design */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+                font-size: 16px;
+                overflow-x: hidden;
+                min-height: 100vh;
+            }
+            
+            .main-title {
+                font-size: 20px;
+            }
+            
+            .aarti-title {
+                font-size: 16px;
+                line-height: 1.3;
+            }
+            
+            .aarti-section {
+                margin-bottom: 30px;
+                page-break-inside: auto;
+            }
+            
+            .aarti-subtitle {
+                font-size: 13px;
+            }
+            
+            /* Stack table columns vertically on mobile */
+            .verse-table {
+                border: none;
+                margin-bottom: 20px;
+            }
+            
+            .verse-table thead {
+                display: none;
+            }
+            
+            .verse-table, 
+            .verse-table tbody, 
+            .verse-table tr, 
+            .verse-table td {
+                display: block;
+                width: 100%;
+            }
+            
+            .verse-table tr {
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 15px;
+                margin-bottom: 15px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            
+            .verse-table td {
+                border: none;
+                padding: 3px 0;
+                text-align: left;
+            }
+            
+            .devanagari {
+                font-size: 18px;
+                margin-bottom: 6px;
+                line-height: 1.4;
+            }
+            
+            .iast {
+                font-size: 15px;
+                margin-bottom: 8px;
+                line-height: 1.3;
+            }
+            
+            .english {
+                font-size: 14px;
+                line-height: 1.4;
+            }
+            
+            .chorus {
+                padding: 15px;
+                margin: 20px 0;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                border-left: 6px solid #8B4513;
+                background-color: #fff8dc !important;
+            }
+            
+            .chorus-label {
+                font-size: 15px;
+                margin-bottom: 10px;
+                text-align: center;
+                background-color: #8B4513;
+                color: white;
+                padding: 6px 12px;
+                border-radius: 15px;
+                display: block;
+                width: fit-content;
+                margin: 0 auto 10px auto;
+            }
+            
+            .chorus .devanagari {
+                font-size: 17px;
+                margin-bottom: 6px;
+            }
+            
+            .chorus .iast {
+                font-size: 14px;
+                margin-bottom: 6px;
+            }
+            
+            .chorus .english {
+                font-size: 13px;
+            }
+            
+            .page-break {
+                page-break-before: auto; /* Remove page breaks on mobile */
+                margin-top: 30px; /* Add spacing instead */
+            }
+        }
+
+        /* Extra small screens (phones in portrait) */
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 8px;
+            }
+            
+            .main-title {
+                font-size: 18px;
+            }
+            
+            .aarti-title {
+                font-size: 15px;
+            }
+            
+            .verse-table tr {
+                padding: 12px;
+            }
+            
+            .devanagari {
+                font-size: 17px;
+            }
+            
+            .iast {
+                font-size: 14px;
+            }
+            
+            .english {
+                font-size: 13px;
+            }
+        }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="main-title">Ārati Collection</div>
+        <div class="subtitle">Devanāgarī + IAST + English Translation</div>
+    </div>
+
+    <div class="aarti-section">
+        <div class="aarti-title">श्री गणेश आरती — सुखकर्ता दुःखहर्ता</div>
+        <div class="aarti-subtitle">Shri Ganesh Aarti — Sukhakarta Dukhharta</div>
+        
+        <table class="verse-table">
+            <thead>
+                <tr>
+                    <th width="35%">देवनागरी</th>
+                    <th width="35%">IAST</th>
+                    <th width="30%">English</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="devanagari">सुखकर्ता दुःखहर्ता वार्ता विघ्नाची ।</td>
+                    <td class="iast">Sukhakartā duḥkhahartā vārtā vighnācī</td>
+                    <td class="english">Bringer of joy, remover of sorrow, ender of obstacles.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">नुरवी पुरवी प्रेम कृपा जयाची ॥</td>
+                    <td class="iast">Nuravī puravī prema kṛpā jāyacī</td>
+                    <td class="english">He nourishes and fulfills; His love and grace bring victory.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">सर्वांगी सुंदर उटी शेंदुराची ।</td>
+                    <td class="iast">Sarvāṅgī sundara ūṭī śendurācī</td>
+                    <td class="english">Beautiful in every limb, anointed with vermilion.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">कंठी झळके माळा मुक्ताफळांची ॥</td>
+                    <td class="iast">Kaṇṭhī jhalake mālā muktāphalañcī</td>
+                    <td class="english">Around His neck gleams a garland of pearls.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="chorus">
+            <div class="chorus-label">Chorus (धृुव)</div>
+            <div class="devanagari">जय देव जय देव जय मंगलमूर्ति ।</div>
+            <div class="iast">Jaya deva jaya deva jaya maṅgalamūrti</div>
+            <div class="english">Glory to You, O auspicious form!</div>
+            <br>
+            <div class="devanagari">दर्शनमात्रे मनकामना पूर्ति ॥</div>
+            <div class="iast">Darśanamātre manakāmanā pūrti</div>
+            <div class="english">By Your mere darshan, desires are fulfilled.</div>
+        </div>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">रत्नखचित फरा तुज गौरीकुमारा ।</td>
+                    <td class="iast">Ratnakhacit phāra tuja Gaurikumara</td>
+                    <td class="english">O son of Gauri, a jewel-studded frontal plate adorns You.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">चंदनाची उटी कुंकुमकेशरा ॥</td>
+                    <td class="iast">Candānācī ūṭī kuṅkuma-keśarā</td>
+                    <td class="english">Forehead anointed with sandal and saffron.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">हीरजडीत मुकुट शोभतो बरा ।</td>
+                    <td class="iast">Hīrājāḍīta mukuṭa śobhato barā</td>
+                    <td class="english">A diamond-studded crown shines splendidly.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">रूंजुनती नुपुरे चरणी घागरिया ॥</td>
+                    <td class="iast">Rūñjunatī nupure caraṇī ghāgariyā</td>
+                    <td class="english">Anklets jingle at His feet.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">लंबोदर पीतांबर फणिवरवंदना ।</td>
+                    <td class="iast">Lambodara pitāmbara phaṇivaravandanā</td>
+                    <td class="english">Broad-bellied, clad in yellow; praised by the serpent king.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">सरळ सोंड वक्रतुंड त्रिनयना ॥</td>
+                    <td class="iast">Saraḷa soṇḍa vakratuṇḍa trinayanā</td>
+                    <td class="english">Straight trunk, curved-snouted, three-eyed Lord.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">दास रामाचा वाट पाहे सदना ।</td>
+                    <td class="iast">Dāsa Rāmācā vāṭa pāhē sadanā</td>
+                    <td class="english">Your servant Rāma's (devotee) waits at Your abode.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">संकटी पावावे निर्वणी रक्षवे सुरवरवंदना ॥</td>
+                    <td class="iast">Saṅkaṭī pāvavē nirvāṇī rakṣavē suravara-vandanā</td>
+                    <td class="english">In calamity, rescue us; grant liberation; the gods bow to You.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="aarti-section page-break">
+        <div class="aarti-title">श्री गणेश आरती — शेंदूर लाल चढ़ायो</div>
+        <div class="aarti-subtitle">Shri Ganesh Aarti — Shendur Lāl Chaḍhāyo</div>
+        
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">शेंदुर लाल चढ़ायो अच्छा गजमुखको ।</td>
+                    <td class="iast">Śendura lāla chaḍhāyo acchā gajamukhako</td>
+                    <td class="english">Fine vermilion is offered to the auspicious, elephant-faced Lord.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">दोंडिल लाल बिराजे सुत गौरीहरको ॥</td>
+                    <td class="iast">Doṇḍila lāla birāje sut Gauriharako</td>
+                    <td class="english">Ruby-hued son of Gaurī's Lord sits enthroned.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">हाथ लिये गुड़ लड्डू साईं सुरवरको ।</td>
+                    <td class="iast">Hātha liye guḍ-laḍḍū sāīṃ suravara-ko</td>
+                    <td class="english">He holds jaggery laddus, delight of the gods.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">महिमा कहे न जाय लागत हूं पादको ॥१॥</td>
+                    <td class="iast">Mahimā kahe na jāya, lāgata hūṃ pāda-ko ||1||</td>
+                    <td class="english">His glory is beyond words; I bow at His feet.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="chorus">
+            <div class="chorus-label">Chorus (धृुव)</div>
+            <div class="devanagari">जय जय श्री गणराज विद्या सुखदाता ।</div>
+            <div class="iast">Jaya jaya Śrī Gaṇarāja vidyā-sukhadātā</div>
+            <div class="english">Glory to Shri Ganaraj, giver of wisdom and joy.</div>
+            <br>
+            <div class="devanagari">धन्य तुम्हारा दर्शन मेरा मन रमता ॥</div>
+            <div class="iast">Dhanya tumhārā darśana, merā mana ramatā</div>
+            <div class="english">Blessed is Your darshan; my heart rejoices.</div>
+        </div>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">अष्ट सिद्धि दासी संकटको बैरी ।</td>
+                    <td class="iast">Aṣṭa siddhi dāsī, saṅkaṭa-ko bairī</td>
+                    <td class="english">The eight siddhis serve You; You are the foe of troubles.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">विघ्नविनाशन मंगलमूर्ति अधिकारी ।</td>
+                    <td class="iast">Vighna-vināśana, maṅgala-mūrti adhikārī</td>
+                    <td class="english">Remover of obstacles; embodiment of auspiciousness.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">कोटि सूरज प्रकाश ऐसी छवि तेरी ।</td>
+                    <td class="iast">Koṭi sūraj prakāś, aisī chhavi terī</td>
+                    <td class="english">Your radiance equals millions of suns; Your splendor is flawless.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">गंडस्थल मदमस्तक झूले शशिबिहारी ॥२॥</td>
+                    <td class="iast">Gaṇḍa-sthala mada-mastaka jhūle Śaśi-bihārī ||2||</td>
+                    <td class="english">With shining cheeks and moon-adorned head, You sway gracefully.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">भाव भक्ति से कोई शरणागत आवे।</td>
+                    <td class="iast">Bhāva-bhakti se koī śaraṇāgata āve</td>
+                    <td class="english">Whoever comes with devotion into Your refuge…</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">संतत संपत्ति सबहि भरपूर पावे।</td>
+                    <td class="iast">Santata sampat sabahi bharpūr pāve</td>
+                    <td class="english">…receives constant wealth and abundance.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">ऐसे तुम महाराज मोको अति भावे।</td>
+                    <td class="iast">Aise tum Mahārāj moko ati bhāve</td>
+                    <td class="english">O Great King, thus You are most dear to me.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">गोसावीनंदन निशिदिन गुण गावे॥३॥</td>
+                    <td class="iast">Gosāvinandana, niśi-dina guṇa gāve ||3||</td>
+                    <td class="english">O son of the ascetic, may Your virtues be sung day and night.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="aarti-section page-break">
+        <div class="aarti-title">श्री दुर्गा आरती — दुर्गे दुर्घट भारी</div>
+        <div class="aarti-subtitle">Devi Aarti — Durge Durghat Bhari</div>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">दुर्गे दुर्घट भारी तुजविण संसारी ।</td>
+                    <td class="iast">Durgē durghaṭa bhārī tujavina saṃsārī</td>
+                    <td class="english">O Durgā, without You the world is terribly difficult.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">अनाथनाथे अंबे करुणा विस्तारी ॥</td>
+                    <td class="iast">Anāthanāthē ambē karuṇā vistārī</td>
+                    <td class="english">Mother of the helpless, Ambā—extend Your compassion.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">वारी वारीं जन्ममरणाते वारी ।</td>
+                    <td class="iast">Vārī vārīṃ janma-maraṇātē vārī</td>
+                    <td class="english">Again and again deliver us from birth and death.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">हारी पडलो आता संकट नीवारी ॥१॥</td>
+                    <td class="iast">Hārī paḍalō ātā saṅkaṭa nivārī ||1||</td>
+                    <td class="english">I have fallen defeated—now remove my troubles.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="chorus">
+            <div class="chorus-label">Chorus (धृुव)</div>
+            <div class="devanagari">जय देवी जय देवी जय महिषासुरमथनी ।</div>
+            <div class="iast">Jaya dēvī jaya dēvī jaya mahiṣāsura-mathanī</div>
+            <div class="english">Victory to the Goddess, slayer of Mahīṣāsura!</div>
+            <br>
+            <div class="devanagari">सुरवरईश्वरवरदे तारक संजीवनी ॥</div>
+            <div class="iast">Suravara-īśvara-varadē tāraka saṃjīvanī</div>
+            <div class="english">Giver of boons to gods and to Īśvara—saviour, life-giver.</div>
+        </div>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">त्रिभुवनी भुवनी पाहतां तुज ऐसे नाही ।</td>
+                    <td class="iast">Tribhuvanī bhuvanī pāhatāṃ tuja aisé nāhī</td>
+                    <td class="english">In the three worlds none like You is seen.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">चारी श्रमले परंतु न बोलावे काहीं॥</td>
+                    <td class="iast">Cārī śramalē parantu na bōlāvē kāhīṃ</td>
+                    <td class="english">The four (Vedas/sages) grew weary yet could not speak Your greatness.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">साही विवाद करितां पडिले प्रवाही ।</td>
+                    <td class="iast">Sāhī vivāda karitāṃ paḍilē pravāhī</td>
+                    <td class="english">Those who argued were swept away like a current.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">ते तूं भक्तलागी पावसि लवलाही ॥२॥</td>
+                    <td class="iast">Tē tūṃ bhaktā-lāgī pāvasi lavalāhī ||2||</td>
+                    <td class="english">Yet for Your devotees You arrive swiftly.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">प्रसन्न वदने प्रसन्न होसी निजदासां ।</td>
+                    <td class="iast">Prasanna vadanē prasanna hōsī nija-dāsāṃ</td>
+                    <td class="english">With a gracious face, be gracious to Your servants.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">क्लेशापासूनी सोडी तोडी भवपाशा ॥</td>
+                    <td class="iast">Klēśāpasūni sōḍī tōḍī bhava-pāśā</td>
+                    <td class="english">Free us from afflictions; cut the noose of saṃsāra.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">अंबे तुजवांचून कोण पुरविल आशा ।</td>
+                    <td class="iast">Ambē tujavāñcūn kōṇa puravil āśā</td>
+                    <td class="english">Ambā, who besides You can fulfill our hopes?</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">नरहरि तल्लीन झाला पदपंकजलेशा ॥३॥</td>
+                    <td class="iast">Narahari tallina jhālā pada-paṅkaja-lēśā ||3||</td>
+                    <td class="english">Narahari is absorbed in the dust of Your lotus feet.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="aarti-section page-break">
+        <div class="aarti-title">श्री शंकर आरती — लावथवती विकरळा</div>
+        <div class="aarti-subtitle">Shiva Aarti — Lavthavati Vikrala</div>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">लावथवती विकरळा ब्रह्मांडी माळा ।</td>
+                    <td class="iast">Lavthavatī vikrāḷā brahmāṇḍī māḷā</td>
+                    <td class="english">Formidable One, garlanded with the universe.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">वीषें कंठ काळा त्रिनेत्री ज्वाळा ॥</td>
+                    <td class="iast">Vīṣeṃ kaṇṭha kāḷā trinetṛīṃ jvāḷā</td>
+                    <td class="english">With poison-darkened throat and blazing third eye.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">लावण्यसुंदर मस्तकीं बाळा ।</td>
+                    <td class="iast">Lāvaṇya-sundara mastakīṃ bāḷā</td>
+                    <td class="english">Upon the beautiful head sits the youthful Lord.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">तेथुनियां जल निर्मळ वाहे झुळझुळां॥१॥</td>
+                    <td class="iast">Tēthuniyāṃ jala nirmaḷa vāhē jhuḷjhuḷāṃ ||1||</td>
+                    <td class="english">From there pure waters flow in ripples.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="chorus">
+            <div class="chorus-label">Chorus (धृुव)</div>
+            <div class="devanagari">जय देव जय देव जय श्रीशंकरा ।</div>
+            <div class="iast">Jaya dēva jaya dēva jaya śrīśaṅkarā</div>
+            <div class="english">Victory to Shri Shankara!</div>
+            <br>
+            <div class="devanagari">आरती ओवाळूं तुज कर्पूरगौरा ॥</div>
+            <div class="iast">Āratī ovāḷūṃ tuja karpūragaurā</div>
+            <div class="english">We wave the camphor lamp to You, O fair as camphor.</div>
+        </div>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">कर्पूरगौरा भोळा नयनीं विशाळा ।</td>
+                    <td class="iast">Karpūragaurā bhoḷā naynīṃ viśāḷā</td>
+                    <td class="english">Pure as camphor, simple, with large eyes.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">अर्धांगीं पार्वती सुमनांच्या माळा ॥</td>
+                    <td class="iast">Ardhāṅgīṃ Pārvatī sumanāñcyā māḷā</td>
+                    <td class="english">Half Your form is Parvati, with garlands of blossoms.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">विभूतीचे उधळण शितिकंठ नीळा ।</td>
+                    <td class="iast">Vibhūtīcēṃ udhaḷaṇa śitikaṇṭha nīḷā</td>
+                    <td class="english">Sacred ash scattered over Your cool blue throat.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">ऐसा शंकर शोभे उमावेलहळा ॥२॥</td>
+                    <td class="iast">Aisā Śaṅkara śōbhē Umā-velhāḷā ||2||</td>
+                    <td class="english">Such Shiva shines, beloved of Uma.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">देवीं दैत्यीं सागरमंथन पै केले।</td>
+                    <td class="iast">Dēvīṃ daityīṃ sāgara-manthana pai kēlēṃ</td>
+                    <td class="english">During the churning of the ocean by gods and demons…</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">त्यामाजीं जे अवचित हळाहळ उठिले॥</td>
+                    <td class="iast">Tyāmājīṃ jēṃ avacita haḷāhaḷa uṭhilēṃ</td>
+                    <td class="english">When the sudden deadly poison arose…</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">ते तूं असुरपणे प्राशन केले।</td>
+                    <td class="iast">Tēṃ tūṃ asurapaṇēṃ prāśana kēlēṃ</td>
+                    <td class="english">You compassionately drank it…</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">नीळकंठ नाम प्रसिद्ध झाले॥३॥</td>
+                    <td class="iast">Nīḷakaṇṭha nāma prasiddha jhālēṃ ||3||</td>
+                    <td class="english">…and became famed as Nīlakaṇṭha.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">व्याघ्रांबर फणिवरधर सुंदर मदनारी ।</td>
+                    <td class="iast">Vyāghrāṃbara phaṇivaradhara sundara madanārī</td>
+                    <td class="english">Clad in tiger-skin, serpent as ornament; consort most beautiful.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">पंचानन मनमोहन मुनिजनसुखकारी ॥</td>
+                    <td class="iast">Pañcānana manamohana munijana-sukhakārī</td>
+                    <td class="english">Five-faced, mind-enchanting, giver of sages' joy.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">शतकोटींचे बीज वाचे उच्चरी ।</td>
+                    <td class="iast">Śatakoṭīcēṃ bīja vāce ucchārī</td>
+                    <td class="english">Uttering seed-mantras of countless crores.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">रघुकुळटिळक रामदासा अंतरीं॥४॥</td>
+                    <td class="iast">Raghukuḷa-ṭiḷaka Rāmadāsā antarīṃ ||4||</td>
+                    <td class="english">Ramdas, ornament of the Raghu line, abides within.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="aarti-section page-break">
+        <div class="aarti-title">श्री विठ्ठल आरती — युगे अठ्ठावीस</div>
+        <div class="aarti-subtitle">Panduranga Aarti — Yuge Aṭṭhāvis</div>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">युगे अठ्ठावीस विटेवरी उभा ।</td>
+                    <td class="iast">Yugē aṭṭhāvis viṭēvarī ubhā</td>
+                    <td class="english">Standing through twenty-eight yugas upon the brick.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">वामांगी रखुमाई दिसे दिव्य शोभा ।</td>
+                    <td class="iast">Vāmāṅgī Rakhumāī disē divya śobhā</td>
+                    <td class="english">On His left stands Rakhumāī in divine beauty.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">पुंडलिकाचे भेटी परब्रह्म आले गा ।</td>
+                    <td class="iast">Puṇḍalikāce bhēṭī parabrahma ālē gā</td>
+                    <td class="english">Parabrahma came to meet Puṇḍalik.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">चरणीं वाहे भीमा उद्धरी जगा ।। १ ।।</td>
+                    <td class="iast">Caraṇīṃ vāhē Bhīmā uddharī jagā ||1||</td>
+                    <td class="english">At His feet flows the Bhīmā, uplifting the world.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="chorus">
+            <div class="chorus-label">Chorus (धृुव)</div>
+            <div class="devanagari">जय देव जय देव जय पांडुरंगा ।</div>
+            <div class="iast">Jaya dēva jaya dēva jaya Pāṇḍuraṅgā</div>
+            <div class="english">Glory to Lord Pāṇḍuraṅga!</div>
+            <br>
+            <div class="devanagari">रखुमाईवल्लभा राईच्या वल्लभा पावे जीवलगा ॥</div>
+            <div class="iast">Rakhumāī-vallabhā, Rāīcyā vallabhā pāvē jivalagā</div>
+            <div class="english">Beloved of Rakhumāī and Rāī—accept our devoted hearts.</div>
+        </div>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">तुळसीमाळा गळां कर ठेवुनि कटीं।</td>
+                    <td class="iast">Tuḷasī-māḷā gaḷāṃ kara ṭhēvuṇi kaṭīṃ</td>
+                    <td class="english">Tulsi garland at the neck; hands on the waist.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">कांसे पीतांबर कस्तुरी ललाटी ।</td>
+                    <td class="iast">Kānse pītāṃbara kasturī lallāṭī</td>
+                    <td class="english">Golden-yellow robes; musk on the brow.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">देव सुरवर नित्य येती भेटी ।</td>
+                    <td class="iast">Dēva suravara nitya yētī bhēṭī</td>
+                    <td class="english">Gods and celestials come daily for darshan.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">गरुड हनुमन्त पुढे उभे राहती ।। २ ।।</td>
+                    <td class="iast">Garuḍa Hanumanta puḍhē ubhē rāhatī ||2||</td>
+                    <td class="english">Garuda and Hanuman stand before Him.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">धन्य वेणुनाद अनुक्षेत्रपाळा ।</td>
+                    <td class="iast">Dhanya vēṇunāda anu-kṣētrapāḷā</td>
+                    <td class="english">Blessed is the flute-melody; guardian of sacred lands.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">सुवर्णाची कमळे वनमाळा गळां ।</td>
+                    <td class="iast">Suvarṇācī kamaḷe vanamāḷā gaḷāṃ</td>
+                    <td class="english">Golden lotuses; forest garlands at the neck.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">राही रखुमाबाई राणीया सकळा ।</td>
+                    <td class="iast">Rāhī Rakhumābāī rāṇīyā sakaḷā</td>
+                    <td class="english">With Rāhī, Rakhumābāī, and all queens.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">ओवाळिती राजा विठोबा सावळा ।। ३ ।।</td>
+                    <td class="iast">Ovāliti rājā Viṭhobā sāvaḷā ||3||</td>
+                    <td class="english">They wave lamps to the dark-hued king Viṭhobā.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">ओवाळूं आरत्या कुरवंड्या येती ।</td>
+                    <td class="iast">Ovālūṃ āratyā kurvaṇḍyā yētī</td>
+                    <td class="english">They perform āratī; the little lamps arrive.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">चंद्रभागेमाजी सोडुनियां देती ।</td>
+                    <td class="iast">Caṃdrabhāgēmājī sōḍuniyāṃ dētī</td>
+                    <td class="english">They set them afloat on the Chandrabhāga.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">डिंडया पताका वैष्णव नाचती ।</td>
+                    <td class="iast">Diṇḍyā patākā vaiṣṇava nācatī</td>
+                    <td class="english">Vaishnavs dance with processional flags.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">पंढरीचा महिमा वर्णावा किती ।। ४ ।।</td>
+                    <td class="iast">Paṇḍharīcā mahimā varṇāvā kitī ||4||</td>
+                    <td class="english">How can Pandharpur's glory be described?</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">आषाढी कार्तिकी भक्तजन येती ।</td>
+                    <td class="iast">Āṣāḍhī kārtikī bhakta-jana yētī</td>
+                    <td class="english">In Āṣāḍhī and Kārtikī, devotees gather.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">चंद्रभागेमध्ये स्नान जे करिती ।</td>
+                    <td class="iast">Caṃdrabhāgē-madhyē snāna jē karitī</td>
+                    <td class="english">They bathe in the Chandrabhāga.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">दर्शनहेळामात्रे त्यां होय मुक्ति।</td>
+                    <td class="iast">Darśana-hēḷā-mātrē tyāṃ hōy mukti</td>
+                    <td class="english">By the mere sight (of Him) they gain liberation.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">केशवासी नामदेव भावे ओवाळिती ।। ५ ।।</td>
+                    <td class="iast">Keśavāsī Nāmdev bhāvē ovāḷitī ||5||</td>
+                    <td class="english">Keśavāsī Nāmdev offers this āratī with devotion.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="aarti-section page-break">
+        <div class="aarti-title">मन्त्र पुष्पांजली</div>
+        <div class="aarti-subtitle">Mantra Pushpanjali (Vedic Verses)</div>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">ॐ यज्ञेन यज्ञमयजन्त देवास्तानि धर्माणि प्रथमान्यासन्।</td>
+                    <td class="iast">om yajñena yajñam ayajanta devās tāni dharmāṇi prathamāny āsan</td>
+                    <td class="english">By sacrifice the gods performed sacrifice; those were the earliest ordinances.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">ते ह नाकं महिमानः सचन्त यत्र पूर्वे साध्यासन्ति देवाः॥१॥</td>
+                    <td class="iast">te ha nākaṃ mahimānaḥ sacanta yatra pūrve sādhyāḥ santi devāḥ ||1||</td>
+                    <td class="english">They attained heaven's height where the ancient Sādhyas dwell.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">ॐ राजाधिराजाय प्रसह्यसाहिने नमो वयं वैश्रवणाय कुर्महे।</td>
+                    <td class="iast">om rājādhirājāya prasahya-sāhine namo vayaṃ vaiśravaṇāya kurmahe</td>
+                    <td class="english">We bow to Rājādhirāja, the mighty Vaiśravaṇa (Kubera).</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">स मे कामान्कामकामाय महयम् कामेश्वरो वैश्रवणो ददातु।</td>
+                    <td class="iast">sa me kāmān kāma-kāmāya mahyam kāmeśvaro vaiśravaṇo dadātu</td>
+                    <td class="english">May the Lord of desires, Vaiśravaṇa, grant me my worthy desires.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">कुबेराय वैश्रवणाय महाराजाय नमः॥२॥</td>
+                    <td class="iast">kuberāya vaiśravaṇāya mahārājāya namaḥ ||2||</td>
+                    <td class="english">Salutations to Kubera, Great King Vaiśravaṇa.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">ॐ स्वस्ति । सामराज्यं भौज्यं स्वराज्यं वैराज्यं पारमेष्ठ्यं राज्यं महाराज्यमाधिपत्यमयं ।</td>
+                    <td class="iast">om svasti | sāmrājyaṃ bhaujyaṃ svārājyaṃ vairājyaṃ pārameṣṭhyaṃ rājyaṃ mahārājyam ādhipatyam ayaṃ</td>
+                    <td class="english">Auspiciousness: may there be sovereignty, enjoyment, independence, supreme status, kingship, great kingship and lordship.</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">समन्तपर्यायी स्यात्सार्वभौमः सार्वायुष आन्तादापरार्धात्पृथिव्यै समुद्रपर्यन्तायाम् एकराळिति ॥३॥</td>
+                    <td class="iast">samanta-paryāyī syāt sārvabhaumaḥ sārvāyuṣ āntād āparārdhāt pṛthivyai samudra-paryantāyām eka-rāḷ iti ||3||</td>
+                    <td class="english">May it extend on all sides, be universal and long-lived—up to the ocean-girt earth.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="verse-table">
+            <tbody>
+                <tr>
+                    <td class="devanagari">तदप्येषः श्लोकोऽभिगीतो । मरुतः परिवेष्टारो मरुत्स्वावसन्गृहे।</td>
+                    <td class="iast">tad apyeṣaḥ śloko 'bhigīto | marutaḥ pariveṣṭāro marutsy āvasan gṛhe</td>
+                    <td class="english">Moreover this verse is sung: 'The Maruts attended, dwelling in Marut's house'—</td>
+                </tr>
+                <tr>
+                    <td class="devanagari">आविक्षितस्य कामप्रेर्विश्वेदेवाः सभासद इति ॥४॥</td>
+                    <td class="iast">āvikṣitasya kāmaprer viśvedevāḥ sabhāsada iti ||4||</td>
+                    <td class="english">'…for the desire-fulfilling king; all the gods were seated in assembly.'</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
