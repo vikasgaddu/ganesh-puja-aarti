@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ārati Collection</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
         @page {
             margin: 1in;
@@ -42,22 +44,56 @@
         .aarti-section {
             margin-bottom: 40px;
             page-break-inside: avoid;
+            border: 2px solid #8B4513;
+            border-radius: 15px;
+            padding: 25px;
+            background: linear-gradient(135deg, #fefefe 0%, #fff8dc 100%);
+            box-shadow: 0 8px 16px rgba(139, 69, 19, 0.15);
+            margin-top: 30px;
+            position: relative;
+        }
+        
+        .aarti-section:first-child {
+            margin-top: 0;
+        }
+        
+        .aarti-section::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            height: 4px;
+            background: linear-gradient(90deg, #8B4513, #CD853F, #8B4513);
+            border-radius: 15px 15px 0 0;
         }
         
         .aarti-title {
-            font-size: 18px;
+            font-size: 22px;
             font-weight: bold;
-            color: #8B4513;
-            margin-bottom: 5px;
-            border-bottom: 1px solid #8B4513;
-            padding-bottom: 5px;
+            color: white;
+            margin-bottom: 8px;
+            text-align: center;
+            background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+            padding: 15px;
+            border-radius: 10px;
+            margin: -15px -15px 15px -15px;
+            box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
+            border: none;
         }
         
         .aarti-subtitle {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 15px;
+            font-size: 16px;
+            color: #8B4513;
+            margin-bottom: 25px;
             font-style: italic;
+            text-align: center;
+            margin-top: 5px;
+            font-weight: 600;
+            background-color: rgba(139, 69, 19, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: 1px solid rgba(139, 69, 19, 0.2);
         }
         
         .verse-table {
@@ -113,6 +149,70 @@
         
         .page-break {
             page-break-before: always;
+        }
+        
+        .section-separator {
+            border-top: 4px solid #8B4513;
+            margin: 40px 0 20px 0;
+            position: relative;
+        }
+        
+        .section-separator::before {
+            content: "🕉️";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            padding: 0 15px;
+            font-size: 20px;
+            color: #8B4513;
+        }
+        
+        /* Bootstrap Enhancement */
+        .container-fluid {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Enhanced Mobile Section Styling */
+        @media screen and (max-width: 768px) {
+            .aarti-section {
+                border: 2px solid #8B4513 !important;
+                border-radius: 15px !important;
+                padding: 15px !important;
+                margin: 20px 0 !important;
+                background: linear-gradient(135deg, #fefefe 0%, #fff8dc 100%) !important;
+                box-shadow: 0 6px 12px rgba(139, 69, 19, 0.2) !important;
+            }
+            
+            .aarti-title {
+                background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%) !important;
+                color: white !important;
+                font-size: 16px !important;
+                box-shadow: 0 3px 6px rgba(139, 69, 19, 0.3) !important;
+            }
+            
+            .aarti-subtitle {
+                color: #8B4513 !important;
+                font-weight: bold !important;
+                font-size: 14px !important;
+                background-color: rgba(139, 69, 19, 0.1) !important;
+                padding: 6px 12px !important;
+                border-radius: 15px !important;
+                border: 1px solid rgba(139, 69, 19, 0.2) !important;
+            }
+            
+            .section-separator {
+                border-top: 3px solid #8B4513;
+                margin: 25px 0 15px 0;
+            }
+            
+            .section-separator::before {
+                font-size: 16px;
+                top: -10px;
+                padding: 0 8px;
+            }
         }
         
         /* Mobile-First Responsive Design */
@@ -430,10 +530,11 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="main-title">Ārati Collection</div>
-        <div class="subtitle">Devanāgarī + IAST + English Translation</div>
-    </div>
+    <div class="container-fluid">
+        <div class="header">
+            <div class="main-title">Ārati Collection</div>
+            <div class="subtitle">Devanāgarī + IAST + English Translation</div>
+        </div>
 
     <div class="aarti-section">
         <div class="aarti-title">श्री गणेश आरती — सुखकर्ता दुःखहर्ता</div>
@@ -555,6 +656,7 @@
         </div>
     </div>
 
+    <div class="section-separator"></div>
     <div class="aarti-section page-break">
         <div class="aarti-title">श्री गणेश आरती — शेंदूर लाल चढ़ायो</div>
         <div class="aarti-subtitle">Shri Ganesh Aarti — Shendur Lāl Chaḍhāyo</div>
@@ -668,6 +770,7 @@
         </div>
     </div>
 
+    <div class="section-separator"></div>
     <div class="aarti-section page-break">
         <div class="aarti-title">श्री दुर्गा आरती — दुर्गे दुर्घट भारी</div>
         <div class="aarti-subtitle">Devi Aarti — Durge Durghat Bhari</div>
@@ -781,6 +884,7 @@
         </div>
     </div>
 
+    <div class="section-separator"></div>
     <div class="aarti-section page-break">
         <div class="aarti-title">श्री शंकर आरती — लावथवती विकरळा</div>
         <div class="aarti-subtitle">Shiva Aarti — Lavthavati Vikrala</div>
@@ -930,6 +1034,7 @@
         </div>
     </div>
 
+    <div class="section-separator"></div>
     <div class="aarti-section page-break">
         <div class="aarti-title">श्री विठ्ठल आरती — युगे अठ्ठावीस</div>
         <div class="aarti-subtitle">Panduranga Aarti — Yuge Aṭṭhāvis</div>
@@ -1115,6 +1220,7 @@
         </div>
     </div>
 
+    <div class="section-separator"></div>
     <div class="aarti-section page-break">
         <div class="aarti-title">शिव स्तुति</div>
         <div class="aarti-subtitle">Shiva Stuti (Praise of Lord Shiva)</div>
@@ -1217,6 +1323,7 @@
         </table>
     </div>
 
+    <div class="section-separator"></div>
     <div class="aarti-section page-break">
         <div class="aarti-title">मन्त्र पुष्पांजली</div>
         <div class="aarti-subtitle">Mantra Pushpanjali (Vedic Verses)</div>
@@ -1286,5 +1393,9 @@
             </tbody>
         </table>
     </div>
+    </div>
+    
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
